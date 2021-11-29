@@ -33,3 +33,27 @@ let glideMixin = (obj) => {
 }
 glideMixin(bird)
 glideMixin(boat)
+
+// создание privat переменной
+
+function Bird() {
+    let weight = 15;
+    this.getWeight = () => {
+        return weight
+    }
+}
+//IIFE immedietly invoked function expression
+let funModule = (function () {
+    return {
+        isCuteMixin: function (obj) {
+            obj.isCute = function () {
+                return true;
+            };
+        },
+        singMixin: function (obj) {
+            obj.sing = function () {
+                console.log("Singing to an awesome tune");
+            };
+        }
+    }
+})()
